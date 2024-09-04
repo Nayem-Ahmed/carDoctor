@@ -1,0 +1,113 @@
+/* Navbar.module.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #273c75;
+    position: relative;
+    color: white;
+
+    
+}
+
+
+.menuIcon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+ 
+}
+
+
+.navLinks ul {
+    display: flex;
+    gap: 20px;
+}
+
+
+.navLinks li {
+    display: flex;
+    align-items: center;
+}
+
+
+.navLinks a {
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.appointmentButton{
+    display: flex;
+    gap: 20px;
+    justify-items: center;
+
+}
+
+.appointmentButton button {
+    background-color: #EE5A24;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+ 
+
+.appointmentButton button:hover {
+    background-color: #EA2027;
+}  
+
+/* Media query for tablets and smaller devices */
+@media (max-width: 768px) {
+ 
+    .menuIcon {
+        display: block; /* Show hamburger icon */
+    }
+
+    .navLinks {
+        display: none; /* Hide nav links initially */
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #273c75;
+        margin: auto;   
+        
+ 
+    }
+    .navLinks ul li a{
+        text-align: center;
+ 
+    }
+
+    .showMenu {
+        display: flex; /* Show nav links when menu is open */
+    }
+
+    .navLinks ul {
+        flex-direction: column; /* Stack nav items vertically */
+        margin: auto;
+      
+ 
+    }
+
+    .navLinks li {
+     
+        text-align: center; /* Center text for nav items */
+        padding: 0.5rem;
+        margin: auto;
+        justify-content: center;
+        display: flex;
+        margin-left: 0;
+        padding-left: 0;
+        
+    }
+
+ 
+}
