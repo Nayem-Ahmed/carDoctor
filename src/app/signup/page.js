@@ -2,9 +2,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const SignupPage = () => {
+const SignupPage =  () => {
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         // Add your signup logic here
 
@@ -14,10 +14,28 @@ const SignupPage = () => {
             password : event.target.password.value,
 
         }
-        console.log(newUser);
-        
-    };
+        try {
+            // Send a POST request to your API
+            const response = await fetch('http://localhost:3000/signup/api', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newUser),
+            });
 
+            const result = await response.json();
+            console.log(result);
+
+            // If signup is successful, reset the form
+            if (response.ok) {
+                event.target.reset();  // Reset the form inputs
+            }
+
+        } catch (error) {
+            console.error('Signup failed:', error);
+        }
+    };
     return (
         <div className='flex flex-col md:flex-row justify-center my-8 p-10'>
             <div className='md:w-1/2'>
