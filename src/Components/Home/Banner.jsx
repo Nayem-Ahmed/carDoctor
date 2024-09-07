@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Banner = () => {
@@ -31,7 +32,9 @@ const Banner = () => {
                             <h2 className="text-md">{b.subtitle}</h2>
                             <div className='flex gap-5 mt-4'>
                                 <button className='bg-red-500 px-5 py-2 rounded-md text-white' type="button">Discover More</button>
-                                <button className='bg-red-500 px-5 py-2 rounded-md text-white' type="button">login</button>
+                                <Link href={`/login`}>
+                                    <button className='bg-red-500 px-5 py-2 rounded-md text-white' type="button">login</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

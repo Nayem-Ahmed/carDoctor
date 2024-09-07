@@ -19,12 +19,14 @@ const Navbar = () => {
     return (
         <nav className={Components.navbar}>
             <div>
-                <Image
-                    alt="logo"
-                    width={60}
-                    height={60}
-                    src={'/assets/logo.svg'}
-                />
+                <Link href={`/`}>
+                    <Image
+                        alt="logo"
+                        width={60}
+                        height={60}
+                        src={'/assets/logo.svg'}
+                    />
+                </Link>
             </div>
 
             <div className={`${Components.navLinks} ${menuOpen ? Components.showMenu : ''}`}>
